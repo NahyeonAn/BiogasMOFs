@@ -19,6 +19,7 @@ plt.rcParams['font.family'] = 'arial'
 from sklearn.metrics import r2_score
 from scipy.optimize import minimize
 
+# A function that creates Python functions for isotherm models based on their names and parameters
 def MakeIsoFunc(func, par):
     def Lang(p, T):
         num = par[0]*par[1]*p
@@ -89,7 +90,8 @@ def MakeIsoFunc(func, par):
         isotherm = DA
     
     return isotherm
-   
+
+# A function that derives CO2 and CH4 isotherm functions from the given data using MakeIsoFunc
 def WhichIsoFunction(target):
     #CO2
     gases = ['CO2', 'CH4']
